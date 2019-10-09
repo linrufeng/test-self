@@ -66,8 +66,14 @@
     "@nutui/upload": "^0.1.4",
     "autoprefixer": "^9.6.4",
     "cache-loader": "^4.1.0",
+    "chalk": "^2.4.2",
     "express": "^4.17.1",
+    "happypack": "^5.0.1",
+    "os": "^0.1.1",
     "postcss-loader": "^3.0.0",
-    "vue-server-renderer": "^2.6.10"
+    "progress-bar-webpack-plugin": "^1.12.1",
+    "vue-server-renderer": "^2.6.10",
+    "webpack-build-notifier": "^1.1.1",
+    "webpack-dashboard": "^3.2.0"
   }
 }
