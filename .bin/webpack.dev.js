@@ -15,32 +15,24 @@ devConfig = Object.assign(web_base,{
                 include: path.resolve(__dirname, "../src"),
                 exclude: /node_modules/,
                 use: [
-                    'cache-loader',  'style-loader','happypack/loader?id=css'            
+                    'cache-loader', 'style-loader','happypack/loader?id=css'            
                 ]
             },  
             {
-            test: /\.tsx?$/,              
-            include: path.resolve(__dirname, "../src"),
-            exclude: /node_modules/,
-            use:[
-                'cache-loader',                
-                {                  
-                    loader:'ts-loader',
-                    options: {
-                        appendTsSuffixTo: [/\.vue$/],
-                        appendTsxSuffixTo: [/\.vue$/]
+                test: /\.tsx?$/,              
+                include: path.resolve(__dirname, "../src"),
+                exclude: /node_modules/,
+                use:[
+                    'cache-loader',                
+                    {                  
+                        loader:'ts-loader',
+                        options: {
+                            appendTsSuffixTo: [/\.vue$/],
+                            appendTsxSuffixTo: [/\.vue$/]
+                        }
                     }
-                }
-            ]              
+                ]              
             },  
-            {
-            test: /\.svg$/,
-                loader: 'svg-sprite-loader',
-                include:[path.resolve('src/asset/svgSprite')],
-                options:{
-                    symbolId:'icon-[name]'
-                }
-            },
             {
             test: /\.(png|jpg|gif|webp|woff|eot|ttf|svg)$/,
                 use:{
@@ -50,8 +42,7 @@ devConfig = Object.assign(web_base,{
                         limit:3000
                     }
                 },
-                exclude:[path.resolve('src/asset/svgSprite')]
-            
+                exclude:['/node_modules/']            
             },     
             {
                 test:/\.vue$/,
@@ -77,7 +68,6 @@ devConfig.plugins = [...devConfig.plugins,
         id: 'css',
         // 如何处理 .css 文件，用法和 Loader 配置中一样
         loaders: [ 
-                   
         'css-loader',    
         'sass-loader'],
          //共享进程池
