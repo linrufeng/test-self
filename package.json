@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "description": "vue编译工具",
   "main": "index.js",
-  "publicPath": "//static.360buyimg.com/JDC_JDME_WEEKLY",
+  "publicPath": "//static.360buyimg.com/testGaea5.0",
   "ftpServer": "static.360buyimg.com",
-  "ftpTarget": "JDC_JDME_WEEKLY",
+  "ftpTarget": "testGaea5.0",
   "scripts": {
-    "dev": "webpack-dev-server --colors --config .bin/webpack.dev.js",
-    "start": "npm run dev",
-    "build": "webpack --progress --colors  --press  --config .bin/webpack.build.js",
-    "build:un": "webpack  --config .bin/webpack.build.js",
-    "server": "node .bin/webpack.ssr.js"
+    "dev": "webpack-dev-server --colors --config .bin/webpack.dev.js",    
+    "build": "webpack --progress --colors  --press  --config .bin/webpack.build.js",  
+    "upload": "webpack --progress --colors  --press  --config .bin/webpack.upload.js"     
   },
   "repository": {
     "type": "git",
