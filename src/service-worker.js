@@ -1,4 +1,4 @@
-var cacheName = 'helloWorld';     // 缓存的名称  
+var cacheName = 'helloWorld' // 缓存的名称  
 // install 事件，它发生在浏览器安装并注册 Service Worker 时        
 self.addEventListener('install', event => { 
 /* event.waitUtil 用于在安装成功之前执行一些预装逻辑
@@ -6,11 +6,11 @@ self.addEventListener('install', event => {
  安装成功后 ServiceWorker 状态会从 installing 变为 installed */
   event.waitUntil(
     caches.open(cacheName)                  
-    .then(cache => {
-      console.log(cache)
-    })
-  );
-});
+      .then(cache => {
+        console.log(cache)
+      })
+  )
+})
   
 /**
 为 fetch 事件添加一个事件监听器。接下来，使用 caches.match() 函数来检查传入的请求 URL 是否匹配当前缓存中存在的任何内容。如果存在的话，返回缓存的资源。
