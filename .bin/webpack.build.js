@@ -37,7 +37,7 @@ let buildCongfig = Object.assign(web_base,{
                 include: path.resolve(__dirname, "../src"),
                 exclude: /node_modules/,
                 use: [
-                    MiniCssExtractPlugin.loader, 'happypack/loader?id=css'     
+                    MiniCssExtractPlugin.loader,'happypack/loader?id=css'     
                 ]
             },               
             {
