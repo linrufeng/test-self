@@ -10,7 +10,6 @@ const autoprefixer         = require('autoprefixer');
 const config               = require('./../package.json');
 const argv = require('yargs').argv;
 const path = require('path');
-
 const HappyPack = require('happypack');
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
@@ -127,9 +126,9 @@ buildCongfig.plugins = [
     new HtmlWebpackPlugin({
         template: path.join(__dirname, '../src/index.html'),
         filename: 'index.html',    
-    }),       
+    }), 
     new htmlWebpackIncludeAssetsPlugin({
-        publicPath:config.publicPath,
+        publicPath:argv.local?"":config.publicPath,
         append:false
     }),
     new MiniCssExtractPlugin({
