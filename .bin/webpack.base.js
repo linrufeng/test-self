@@ -4,12 +4,13 @@ const chalk= require('chalk');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const config               = require('./../package.json');
+
 module.exports = {    
   entry: './src/app.ts',
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, '../build'+ '/' + config.version),
-    publicPath: config.publicPath + '/'+config.version+'/',
+	path: path.resolve(__dirname, '../build'+ '/' + config.version), 
+	publicPath: config.publicPath + '/'+config.version+'/' 
   }, 
   resolve: {
     extensions: [ '.tsx', '.ts', '.js', '.vue','.svg' ]
@@ -22,8 +23,7 @@ module.exports = {
         width: 60
       }),
       new WebpackBuildNotifierPlugin({
-        title: "My Project Webpack Build",
-        // logo: path.resolve("./img/favicon.png"),
+        title: "My Project Webpack Build",        
         suppressSuccess: true
       })
   ] 

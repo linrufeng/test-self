@@ -1,20 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import Index from "./view/index.vue";
+import Detail from "./view/detail.vue";
+const Detail2 = () => import("./view/detail2.vue");
 
-
-const carefree = true //process.env.NODE_ENV === 'carefree'
-// 懒加载（按需加载）
-import Index from './view/index.vue'
-// const test = () => import('./view/test.vue')
-// const choseday = () => import('./view/choseDay.vue')
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/', component: Index }, 
-    // { path: '/test', component: test },   
-    // { path:'/choseday',component:choseday }
-]
+    { path: "/", component: Index },
+    { path: "/detail", component: Detail },
+    { path: "/detail2", component: Detail2 }, 
+];
 const router = new VueRouter({
     mode:'hash',
     routes
